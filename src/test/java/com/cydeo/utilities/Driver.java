@@ -16,7 +16,7 @@ public class Driver {
     private static WebDriver driver;
 
     /*
-    creating re-useable utility method which same driver instance when we call it
+    creating re-usable utility method which same driver instance when we call it
      */
     public static WebDriver getDriver(){
 

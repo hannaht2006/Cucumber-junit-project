@@ -21,7 +21,7 @@ public class ConfigurationReader {
              FileInputStream file = new FileInputStream("pathOfTheFileWeAreTryingToOpen");
             */
 
-            FileInputStream file = new FileInputStream("configuration.properties");
+            FileInputStream file = new FileInputStream("config.properties");
 
             // 3- Load the properties object using FileInputStream object
             // Load "properties" object with the "file" we opened using FileInputStream

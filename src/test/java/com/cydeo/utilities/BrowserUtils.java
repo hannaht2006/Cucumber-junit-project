@@ -4,8 +4,11 @@ package com.cydeo.utilities;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -53,8 +56,29 @@ public class BrowserUtils {
         Assert.assertTrue("Title verification failed", actualTitle.contains(expectedTitle));
     }
 
-    public void waitForInvisibilityOf(WebElement element){
+    public static void waitForInvisibilityOf(WebElement element){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    /**
+     * This method will accept dropdown as WebElement
+     * and return all the options' text in a list of String
+     * @return List<String>
+     */
+    public static List<String> dropdownOptionAsString(WebElement dropdownElement) {
+        Select select = new Select(dropdownElement);
+
+//List of all ACTUAL month <options> as WebElement
+        List<WebElement> actualMonthAsWebElement = select.getOptions();
+
+//List of all ACTUAL month <options> as String
+        List<String> actualMonthAsString = new ArrayList<>();
+
+//with using for loop, we convert each WebElement of options to String with using getText() method and using add() method we store each String in List<String> actualOption as String
+        for (WebElement each : actualMonthAsWebElement) {
+            actualMonthAsString.add(each.getText());
+        }
+        return actualMonthAsString;
     }
 }
