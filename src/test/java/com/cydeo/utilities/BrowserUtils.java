@@ -81,4 +81,18 @@ public class BrowserUtils {
         }
         return actualMonthAsString;
     }
+
+    /**
+     * This method will accept a group of radio button as a List<WebElement>
+     * It will loop through the List, and click to the radio button with provilded attribute value
+     * @param radioButton
+     * @param valueOfAttribute
+     */
+    public static void clickRadioButton(List<WebElement> radioButton, String valueOfAttribute){
+        for (WebElement eachCard : radioButton) {
+            if(eachCard.getAttribute("value").equalsIgnoreCase(valueOfAttribute)){
+                eachCard.click();
+            }
+    }
+}
 }

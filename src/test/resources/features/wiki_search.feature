@@ -31,7 +31,7 @@ Feature: Wikipedia Search Functionality and Verification
     And User clicks wiki search button
     Then User sees "Steve Jobs" is in the image header
 
-@scenarioOutlinePractice
+  @scenarioOutlinePractice
   Scenario Outline: Wikipedia Search Functionality Title Verification with using DDT(data driven testing)
    # data driven testing will require table data (require table header) under examples
   #  Given User is on Wikipedia home page
@@ -47,4 +47,4 @@ Feature: Wikipedia Search Functionality and Verification
       | Elon Musk         | Elon Musk         |
       | Albert Einstein   | Albert Einstein   |
       | Chuck Norris      | Chuck Norris      |
-      | Alisher Usmanov  | Alisher Usmanov  |
+      | Alisher Usmanov   | Alisher Usmanov   |

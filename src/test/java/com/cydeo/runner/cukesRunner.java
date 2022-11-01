@@ -8,8 +8,13 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
 
-        plugin = "html:target/cucumber-report.html",
-        //for having report in html file location in target folder
+        plugin = {
+                "html:target/cucumber-report.html",
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
+                "rerun:target/rerun.txt"
+        },
+ //for having report in html file location in target folder
+//rerun: for re run fail scenarios
 
         features ="src/test/resources/features",//at package feature->right click->copy path->click->path from content/root : where to find the feature file
 
@@ -18,7 +23,7 @@ import org.junit.runner.RunWith;
 
         dryRun = false , //determine if we want to execute step-definitions package (true: run the feature, false: run the step-definitions)
 
-        tags = "@wip"//"@librarian or @student and not @admin"
+        tags = "@femaleScientist"//"@librarian or @student and not @admin"
         //if leave the tags empty: tags = "" --> will run everything in feature file
         //wip: work in progress: when see this tag we know where we are working on
 )

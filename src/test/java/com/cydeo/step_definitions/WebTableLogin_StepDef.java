@@ -8,9 +8,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class WebTableLogin_StepDef {
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-    WebTableLoginPage webTableLoginPage = new WebTableLoginPage();
+public class WebTableLogin_StepDef {
+   WebTableLoginPage webTableLoginPage = new WebTableLoginPage();
     @Given("user is on login page of the web table app")
     public void user_is_on_login_page_of_the_web_table_app() {
         Driver.getDriver().get(ConfigurationReader.getProperty("webtable.env"));
@@ -32,4 +36,20 @@ public class WebTableLogin_StepDef {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("order") );
     }
 
+    @When("user enters username {string} password {string} and logins")
+    public void userEntersUsernamePasswordAndLogins(String username, String pasword) {
+//        webTableLoginPage.inputUsername.sendKeys(username);
+//        webTableLoginPage.inputPassword.sendKeys(pasword);
+//        webTableLoginPage.loginBtn.click();
+
+        webTableLoginPage.login(username, pasword);//using login method from webTableLoginPage
+    }
+
+    @When("user enters below credentials")
+    public void userEntersBelowCredentials(Map<String, String> credentials) {
+//        webTableLoginPage.inputUsername.sendKeys(credentials.get("username"));
+//        webTableLoginPage.inputPassword.sendKeys(credentials.get("password"));
+//        webTableLoginPage.loginBtn.click();
+        webTableLoginPage.login(credentials.get("username"), credentials.get("password") );
+    }
 }

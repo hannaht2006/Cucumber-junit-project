@@ -19,4 +19,14 @@ public class WebTableLoginPage {
     @FindBy(xpath = "//button[.='Login']")
     public WebElement loginBtn;
 
+    /**
+     * This method will accept username and password and login to the app
+     * @param username
+     * @param password
+     */
+    public void login (String username, String password){
+        inputUsername.sendKeys(username);
+        inputPassword.sendKeys(password);
+        loginBtn.click();
+    }
 }
