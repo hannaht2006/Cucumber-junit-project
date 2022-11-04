@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin = {
+                "pretty",
                 "html:target/cucumber-report.html",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber",
                 "rerun:target/rerun.txt"
@@ -23,11 +24,12 @@ import org.junit.runner.RunWith;
 
         dryRun = false , //determine if we want to execute step-definitions package (true: run the feature, false: run the step-definitions)
 
-        tags = "@femaleScientist"//"@librarian or @student and not @admin"
+        tags = "@smoke" ,//"@librarian or @student and not @admin"
         //if leave the tags empty: tags = "" --> will run everything in feature file
         //wip: work in progress: when see this tag we know where we are working on
+        publish = true
 )
 //when we run cokesRunner: glue will run all class in step_definitions package: will run Hooks first(@Before will run now), then feature file looking for annotation (example: @smoke) to run the test, but will run background (of the feature file) first , then go to closing of the @After in Hooks class. and another round will repeat for next scenario in feature and go on the next scenario
 
-public class cukesRunner {
+public class CukesRunner {
 }

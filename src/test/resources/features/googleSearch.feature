@@ -1,3 +1,4 @@
+@smoke
 Feature: Google search functionality
 
   User story: As a user, when I'm on the Google search page,

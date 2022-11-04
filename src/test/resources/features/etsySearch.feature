@@ -1,3 +1,4 @@
+@smoke
 Feature: Etsy search functionality
 
   User Story: As a user, I'm on the Etsy home page
