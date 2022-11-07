@@ -10,7 +10,7 @@ Feature: Wikipedia Search Functionality and Verification
     And User clicks wiki search button
     Then User sees Steve Jobs is in the wiki title
 
-
+@smoke
   Scenario:Wikipedia Search Functionality Title Verification
 
     When User types "Steve Jobs" in the wiki search box
