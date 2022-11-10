@@ -12,6 +12,15 @@ import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
+
+    public static void verifyTheTitle (String title){
+        Assert.assertTrue(Driver.getDriver().getTitle().contains(title));
+    }
+
+    public static void clickElement(WebElement element){
+//        waitForVisibilityOf(element, 10);
+                element.click();
+    }
     //methods are static type because we do not want to create an object to call this method. we just call those method with class name
 
     /**
@@ -59,6 +68,11 @@ public class BrowserUtils {
     public static void waitForInvisibilityOf(WebElement element){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    public static void waitForVisibilityOf(WebElement element){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     /**

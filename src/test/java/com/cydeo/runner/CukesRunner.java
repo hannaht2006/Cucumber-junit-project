@@ -25,7 +25,7 @@ import org.junit.runner.RunWith;
 
         dryRun = false , //determine if we want to execute step-definitions package (true: run the feature, false: run the step-definitions)
 
-        tags = "@smoke" ,//"@librarian or @student and not @admin"
+        tags = "@us_03" ,//"@librarian or @student and not @admin"
         //if leave the tags empty: tags = "" --> will run everything in feature file
         //wip: work in progress: when see this tag we know where we are working on
         publish = true
